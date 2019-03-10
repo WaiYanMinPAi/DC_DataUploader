@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_VOMImage">
+  <DataContextMoniker Name="/LINQ_VOMImageDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a1043d82-a1e2-42f1-b27f-dbf369da7306" absoluteBounds="0.625, 0.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/LINQ_VOMImageDataContext/SysImage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec063a37-7cba-4594-af6f-fa3d1262e098" absoluteBounds="0.64000000000000012, 1.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

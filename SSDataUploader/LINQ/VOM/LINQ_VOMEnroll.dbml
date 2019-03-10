@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VOM" Class="LINQ_VOMEnrollDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.1.4.17;Initial Catalog=VOM;User ID=sa" SettingsObjectName="SSDataUploader.Properties.Settings" SettingsPropertyName="VOMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Ref_Individual" Member="Ref_Individuals">
+    <Type Name="Ref_Individual">
+      <Column Name="Ref_IndividualId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SlipNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitPurpose" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="VisaValidity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TypeOfBusiness" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RecommendMinistry" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="VisaDateOfIssue" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VisaDateOfExpiry" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VisaNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisaFee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Currency" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="VisaType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Entries" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="VisaName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PlaceOfIssue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Annotation" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Staydays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisaCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CounterNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalInfant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisaMRZ1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisaMRZ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WatchListResult" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WatchListPoint" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BlackListHitId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PersonId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ref_PassportId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UploadedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isDestroy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="QueueNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AppointmentDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ApprovedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CollectedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CollectedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Ref_Individual_Print_VisaInfo" Member="Print_VisaInfos" ThisKey="Ref_IndividualId" OtherKey="Ref_IndividualId" Type="Print_VisaInfo" />
+      <Association Name="Ref_Individual_Ref_Children" Member="Ref_Childrens" ThisKey="Ref_IndividualId" OtherKey="Ref_IndividualId" Type="Ref_Children" />
+      <Association Name="PersonInfo_Ref_Individual" Member="PersonInfo" ThisKey="PersonId" OtherKey="PersonId" Type="PersonInfo" IsForeignKey="true" />
+      <Association Name="Ref_Passport_Ref_Individual" Member="Ref_Passport" ThisKey="Ref_PassportId" OtherKey="Ref_PassportId" Type="Ref_Passport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PersonInfo" Member="PersonInfos">
+    <Type Name="PersonInfo">
+      <Column Name="PersonId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Occupation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MAddress" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PAddress" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="TelNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PersonInfo_Ref_Individual" Member="Ref_Individuals" ThisKey="PersonId" OtherKey="PersonId" Type="Ref_Individual" />
+      <Association Name="PersonInfo_Ref_Passport" Member="Ref_Passports" ThisKey="PersonId" OtherKey="PersonId" Type="Ref_Passport" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ref_Passport" Member="Ref_Passports">
+    <Type Name="Ref_Passport">
+      <Column Name="Ref_PassportId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PassportType" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CountryCode" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="PassportNo" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="DateOfIssue" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateOfExpire" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MRZ1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MRZ2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MRZ3" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PersonId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Ref_Passport_Ref_Individual" Member="Ref_Individuals" ThisKey="Ref_PassportId" OtherKey="Ref_PassportId" Type="Ref_Individual" />
+      <Association Name="PersonInfo_Ref_Passport" Member="PersonInfo" ThisKey="PersonId" OtherKey="PersonId" Type="PersonInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BlackListHit" Member="BlackListHits">
+    <Type Name="BlackListHit">
+      <Column Name="BlackListHitId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BlackListId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RefIndividualId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PassportNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BLResult" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BLPoint" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HitOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Print_Slip" Member="Print_Slips">
+    <Type Name="Print_Slip">
+      <Column Name="PrintSlipId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SlipNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PassportNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisaName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisaFee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ref_IndividualSyncViewTotal" Member="Ref_IndividualSyncViewTotals">
+    <Type Name="Ref_IndividualSyncViewTotal">
+      <Column Name="Ref_IndividualId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PassportNo" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="VisaNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisaName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="record_status" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UploadedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Print_VisaInfo" Member="Print_VisaInfos">
+    <Type Name="Print_VisaInfo">
+      <Column Name="Print_VisaInfo_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VisaNo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="VisaType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PrintedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PrintedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Ref_IndividualId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Ref_Individual_Print_VisaInfo" Member="Ref_Individual" ThisKey="Ref_IndividualId" OtherKey="Ref_IndividualId" Type="Ref_Individual" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ref_Blacklist" Member="Ref_Blacklists">
+    <Type Name="Ref_Blacklist">
+      <Column Name="BlacklistID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="PPNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NrcNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="MotherName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LetterNo" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsExported" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ref_Children" Member="Ref_Childrens">
+    <Type Name="Ref_Children">
+      <Column Name="Ref_ChildlId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ref_IndividualId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Ref_Individual_Ref_Children" Member="Ref_Individual" ThisKey="Ref_IndividualId" OtherKey="Ref_IndividualId" Type="Ref_Individual" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VisaDestroy" Member="VisaDestroys">
+    <Type Name="VisaDestroy">
+      <Column Name="VisaDestroyId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ref_IndividualId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SlipNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MTelNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitPurpose" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="VisaValidity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TypeOfBusiness" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="VisaDateOfIssue" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VisaDateOfExpiry" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VisaNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisaFee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Currency" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="VisaType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Entries" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="VisaName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PlaceOfIssue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Annotation" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Staydays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisaCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CounterNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalInfant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisaMRZ1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisaMRZ2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BlackListHitId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PersonId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ref_PassportId" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ref_Slip" Member="Ref_Slips">
+    <Type Name="Ref_Slip">
+      <Column Name="SlipID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="QueueNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SlipNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ref_PersonalId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PrintStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

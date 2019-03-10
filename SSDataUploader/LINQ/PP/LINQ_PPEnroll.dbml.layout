@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.625" name="LINQ_PPEnroll">
+  <DataContextMoniker Name="/LINQ_PPEnrollDataContext" />
+  <nestedChildShapes>
+    <classShape Id="136d037e-6f54-461d-8436-7d429e677cc5" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_PPEnrollDataContext/Ref_IndividualView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="029b474e-50c6-4757-b6ab-dcad6d82751a" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2ff9ca5-b6c0-4a9c-913a-e3ca0ca07b80" isExpanded="false" absoluteBounds="2.625, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_PPEnrollDataContext/Ref_Passport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1016f93-1b39-431d-8260-91b12f2d79b2" absoluteBounds="2.64, 0.96, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dd26a3dc-7ce9-4a23-9d01-7e7d789f90e0" isExpanded="false" absoluteBounds="4.75, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_PPEnrollDataContext/Ref_PassportFee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d93b8fce-b13f-4ef8-9ff4-a73c6dce9d1a" absoluteBounds="4.765, 0.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ecf2792d-19a1-43e0-9580-a51033cedebf" isExpanded="false" absoluteBounds="0.5, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_PPEnrollDataContext/Ref_PrintBook" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c633581d-664a-4dd8-b4ad-a1fbe40ea4ef" absoluteBounds="0.51499999999999968, 1.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="acaa2187-03d0-4c3d-85be-0c95ace786b8" isExpanded="false" absoluteBounds="2.625, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_PPEnrollDataContext/Ref_PrintBook_Remove" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7055417-af89-45c4-82ad-af1d6cc3fa16" absoluteBounds="2.6399999999999997, 1.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5c4230c7-8ffc-4c5d-bef2-cf6074f3aca7" isExpanded="false" absoluteBounds="4.75, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_PPEnrollDataContext/Ref_Individual" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4c25827-53df-4607-a976-046d779cb95c" absoluteBounds="4.765, 1.585, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="83809cda-2cab-4177-8444-f09783d12801" absoluteBounds="0.5, 1.75, 2, 9.6552555338541648">
+      <DataClassMoniker Name="/LINQ_PPEnrollDataContext/Ref_IndividualSyncViewTotal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3e2204f-6823-40fd-bd71-16b3068c3b2a" absoluteBounds="0.51499999999999968, 2.21, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

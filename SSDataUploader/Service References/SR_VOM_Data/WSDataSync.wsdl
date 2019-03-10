@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVomData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="individual" type="tns:Ref_Individual" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Ref_Individual">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_IndividualId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SlipNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisitPurpose" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaValidity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeOfBusiness" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecommendMinistry" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisaDateOfIssue" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisaDateOfExpiry" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisaFee" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Entries" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlaceOfIssue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Annotation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Staydays" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CounterNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalInfant" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaMRZ1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaMRZ2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WatchListResult" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WatchListPoint" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlackListHitId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_PassportId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UploadedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="isDestroy" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="QueueNo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppointmentDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CollectedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CollectedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Print_VisaInfos" type="tns:ArrayOfPrint_VisaInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_Childrens" type="tns:ArrayOfRef_Children" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_Passport" type="tns:Ref_Passport" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonInfo" type="tns:PersonInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPrint_VisaInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Print_VisaInfo" nillable="true" type="tns:Print_VisaInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Print_VisaInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Print_VisaInfo_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrintedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrintedOn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_IndividualId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_Individual" type="tns:Ref_Individual" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRef_Children">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ref_Children" nillable="true" type="tns:Ref_Children" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ref_Children">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_ChildlId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_IndividualId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateOfBirth" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_Individual" type="tns:Ref_Individual" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ref_Passport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_PassportId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateOfIssue" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateOfExpire" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MRZ1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MRZ2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MRZ3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_Individuals" type="tns:ArrayOfRef_Individual" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonInfo" type="tns:PersonInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRef_Individual">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ref_Individual" nillable="true" type="tns:Ref_Individual" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PersonInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PersonId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Occupation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_Individuals" type="tns:ArrayOfRef_Individual" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_Passports" type="tns:ArrayOfRef_Passport" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRef_Passport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ref_Passport" nillable="true" type="tns:Ref_Passport" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveVomDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVomDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVomPersonInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="person" type="tns:PersonInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVomPersonInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVomPersonInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVomRef_Passport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passport" type="tns:Ref_Passport" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVomRef_PassportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVomRef_PassportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVom_BlackListHit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blackList" type="tns:BlackListHit" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BlackListHit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BlackListHitId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlackListId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefIndividualId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BLResult" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BLPoint" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HitOn" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveVom_BlackListHitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVom_BlackListHitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVom_PrintSlip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="printSlip" type="tns:Print_Slip" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Print_Slip">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PrintSlipId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SlipNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateOfBirth" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisaFee" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveVom_PrintSlipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVom_PrintSlipResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVom_PrintVisaInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintVisaInfo" type="tns:Print_VisaInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVom_PrintVisaInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVom_PrintVisaInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVom_BlackList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BlackList" type="tns:Ref_Blacklist" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Ref_Blacklist">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BlacklistID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PPNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NrcNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FatherName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LetterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsExported" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveVom_BlackListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVom_BlackListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVom_Children">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Children" type="tns:Ref_Children" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVom_ChildrenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVom_ChildrenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVom_Slip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="slip" type="tns:Ref_Slip" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Ref_Slip">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SlipID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QueueNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SlipNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_PersonalId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrintStatus" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveVom_SlipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVom_SlipResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveVom_VisaDestroy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="visadestroy" type="tns:VisaDestroy" />
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VisaDestroy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VisaDestroyId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_IndividualId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SlipNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MTelNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisitPurpose" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaValidity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeOfBusiness" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisaDateOfIssue" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisaDateOfExpiry" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisaFee" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Entries" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlaceOfIssue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Annotation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Staydays" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CounterNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalInfant" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaMRZ1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VisaMRZ2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlackListHitId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref_PassportId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedOn" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveVom_VisaDestroyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveVom_VisaDestroyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVomDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVomData" />
+  </wsdl:message>
+  <wsdl:message name="SaveVomDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVomDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVomPersonInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVomPersonInfo" />
+  </wsdl:message>
+  <wsdl:message name="SaveVomPersonInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVomPersonInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVomRef_PassportSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVomRef_Passport" />
+  </wsdl:message>
+  <wsdl:message name="SaveVomRef_PassportSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVomRef_PassportResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_BlackListHitSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVom_BlackListHit" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_BlackListHitSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVom_BlackListHitResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_PrintSlipSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVom_PrintSlip" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_PrintSlipSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVom_PrintSlipResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_PrintVisaInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVom_PrintVisaInfo" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_PrintVisaInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVom_PrintVisaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_BlackListSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVom_BlackList" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_BlackListSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVom_BlackListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_ChildrenSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVom_Children" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_ChildrenSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVom_ChildrenResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_SlipSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVom_Slip" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_SlipSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVom_SlipResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_VisaDestroySoapIn">
+    <wsdl:part name="parameters" element="tns:SaveVom_VisaDestroy" />
+  </wsdl:message>
+  <wsdl:message name="SaveVom_VisaDestroySoapOut">
+    <wsdl:part name="parameters" element="tns:SaveVom_VisaDestroyResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="WSDataSyncSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVomData">
+      <wsdl:input message="tns:SaveVomDataSoapIn" />
+      <wsdl:output message="tns:SaveVomDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVomPersonInfo">
+      <wsdl:input message="tns:SaveVomPersonInfoSoapIn" />
+      <wsdl:output message="tns:SaveVomPersonInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVomRef_Passport">
+      <wsdl:input message="tns:SaveVomRef_PassportSoapIn" />
+      <wsdl:output message="tns:SaveVomRef_PassportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_BlackListHit">
+      <wsdl:input message="tns:SaveVom_BlackListHitSoapIn" />
+      <wsdl:output message="tns:SaveVom_BlackListHitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_PrintSlip">
+      <wsdl:input message="tns:SaveVom_PrintSlipSoapIn" />
+      <wsdl:output message="tns:SaveVom_PrintSlipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_PrintVisaInfo">
+      <wsdl:input message="tns:SaveVom_PrintVisaInfoSoapIn" />
+      <wsdl:output message="tns:SaveVom_PrintVisaInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_BlackList">
+      <wsdl:input message="tns:SaveVom_BlackListSoapIn" />
+      <wsdl:output message="tns:SaveVom_BlackListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_Children">
+      <wsdl:input message="tns:SaveVom_ChildrenSoapIn" />
+      <wsdl:output message="tns:SaveVom_ChildrenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_Slip">
+      <wsdl:input message="tns:SaveVom_SlipSoapIn" />
+      <wsdl:output message="tns:SaveVom_SlipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_VisaDestroy">
+      <wsdl:input message="tns:SaveVom_VisaDestroySoapIn" />
+      <wsdl:output message="tns:SaveVom_VisaDestroySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSDataSyncHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSDataSyncHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSDataSyncSoap" type="tns:WSDataSyncSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVomData">
+      <soap:operation soapAction="http://tempuri.org/SaveVomData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVomPersonInfo">
+      <soap:operation soapAction="http://tempuri.org/SaveVomPersonInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVomRef_Passport">
+      <soap:operation soapAction="http://tempuri.org/SaveVomRef_Passport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_BlackListHit">
+      <soap:operation soapAction="http://tempuri.org/SaveVom_BlackListHit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_PrintSlip">
+      <soap:operation soapAction="http://tempuri.org/SaveVom_PrintSlip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_PrintVisaInfo">
+      <soap:operation soapAction="http://tempuri.org/SaveVom_PrintVisaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_BlackList">
+      <soap:operation soapAction="http://tempuri.org/SaveVom_BlackList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_Children">
+      <soap:operation soapAction="http://tempuri.org/SaveVom_Children" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_Slip">
+      <soap:operation soapAction="http://tempuri.org/SaveVom_Slip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_VisaDestroy">
+      <soap:operation soapAction="http://tempuri.org/SaveVom_VisaDestroy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSDataSyncSoap12" type="tns:WSDataSyncSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVomData">
+      <soap12:operation soapAction="http://tempuri.org/SaveVomData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVomPersonInfo">
+      <soap12:operation soapAction="http://tempuri.org/SaveVomPersonInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVomRef_Passport">
+      <soap12:operation soapAction="http://tempuri.org/SaveVomRef_Passport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_BlackListHit">
+      <soap12:operation soapAction="http://tempuri.org/SaveVom_BlackListHit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_PrintSlip">
+      <soap12:operation soapAction="http://tempuri.org/SaveVom_PrintSlip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_PrintVisaInfo">
+      <soap12:operation soapAction="http://tempuri.org/SaveVom_PrintVisaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_BlackList">
+      <soap12:operation soapAction="http://tempuri.org/SaveVom_BlackList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_Children">
+      <soap12:operation soapAction="http://tempuri.org/SaveVom_Children" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_Slip">
+      <soap12:operation soapAction="http://tempuri.org/SaveVom_Slip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVom_VisaDestroy">
+      <soap12:operation soapAction="http://tempuri.org/SaveVom_VisaDestroy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSDataSyncHttpGet" type="tns:WSDataSyncHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSDataSyncHttpPost" type="tns:WSDataSyncHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSDataSync">
+    <wsdl:port name="WSDataSyncSoap" binding="tns:WSDataSyncSoap">
+      <soap:address location="http://10.1.7.177:90/WebService/WSDataSync.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSDataSyncSoap12" binding="tns:WSDataSyncSoap12">
+      <soap12:address location="http://10.1.7.177:90/WebService/WSDataSync.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSDataSyncHttpGet" binding="tns:WSDataSyncHttpGet">
+      <http:address location="http://10.1.7.177:90/WebService/WSDataSync.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSDataSyncHttpPost" binding="tns:WSDataSyncHttpPost">
+      <http:address location="http://10.1.7.177:90/WebService/WSDataSync.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
