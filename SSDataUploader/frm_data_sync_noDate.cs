@@ -542,10 +542,10 @@ namespace SSDataUploader
 
                                 }
                             }
-                                    #endregion
+                            #endregion
 
-                                    #region Image
-                                    List<SysImage> image_data = (from c in dcimg.SysImages where c.PassengerId == the_individual.Ref_PassportId && ((c.ModifiedOn - c.UploadedOn).Value.TotalDays > 0 || c.UploadedOn == null) select c).ToList();
+                            #region Image
+                            List<SysImage> image_data = (from c in dcimg.SysImages where c.PassengerId == the_individual.Ref_PassportId && ((c.ModifiedOn - c.UploadedOn).Value.TotalDays > 0 || c.UploadedOn == null) select c).ToList();
                             if (image_data != null)
                             {
                                 foreach (SysImage s in image_data)
